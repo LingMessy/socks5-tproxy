@@ -1,0 +1,13 @@
+[Unit]
+Description=socks5-tproxy
+After=network.target dhcpcd.service networking.service
+
+[Service]
+Type=forking
+User=root
+WorkingDirectory=/root/startup/socks5-tproxy
+ExecStart=/bin/bash -c './socks5-tproxy.sh'
+
+[Install]
+WantedBy=multi-user.target
+
